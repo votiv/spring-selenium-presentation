@@ -9,13 +9,15 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 /**
  * Created by viskyo on 24/09/2015.
  */
+@Component
 public class BasePageObject {
-
     private static final Logger LOG = LoggerFactory.getLogger(BasePageObject.class);
+
     public long pageLoadTimeout = 30;
     public WebDriver driver;
     public WebDriverWait wait;

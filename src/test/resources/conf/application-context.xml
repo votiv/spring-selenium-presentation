@@ -3,10 +3,12 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+       <!-- This bean makes the connection between the application-context and the application.properties file -->
        <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
               <property name="location" value="classpath:conf/application.properties"/>
        </bean>
 
+       <!-- Configuring the components -->
        <bean id="baseConfiguration" class="awesomeautomation.conf.EnvironmentConfiguration">
               <property name="browser" value="${browser.type}"/>
               <property name="chromeDriverLocation" value="${browser.chromedriver.location}"/>
@@ -18,7 +20,7 @@
               <property name="homepage" value="${homepage}"/>
        </bean>
 
-       <!-- Browser manager-->
+       <!-- Browser manager -->
        <bean id="browserManager" class="tools.BrowserManager" primary="true"
              destroy-method="close" factory-method="createInstance">
               <constructor-arg ref="baseConfiguration"/>

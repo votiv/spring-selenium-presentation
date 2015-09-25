@@ -5,6 +5,8 @@ import awesomeautomation.conf.HomepageConfiguration;
 import awesomeautomation.modules.Homepage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 /**
@@ -12,11 +14,11 @@ import org.testng.annotations.Test;
  */
 public class HomepageTest extends BaseTest {
 
-    @Autowired
-    HomepageConfiguration homepageConfiguration;
+    @BeforeClass
+    public void setUp() {
 
-    @Autowired
-    Homepage homepage;
+        homepage.goToUrl(homepageConfiguration.getLovePage());
+    }
 
     @Test(description = "Testing the shit out of this homepage!")
     public void testHomepage () {

@@ -25,7 +25,7 @@ public class AwesomeServlet extends HttpServlet {
 
         // Actual logic goes here.
         PrintWriter out = response.getWriter();
-        out.println("<h1 class='.love-text'>" + message + "</h1>");
+        out.println("<h1 class='love-text'>" + message + "</h1>");
     }
 
     public void destroy() {
