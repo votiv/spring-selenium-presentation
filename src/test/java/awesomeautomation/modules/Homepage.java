@@ -6,6 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import tools.BasePageObject;
 import tools.BrowserManager;
 
@@ -23,10 +24,6 @@ public class Homepage extends BasePageObject {
 
     public Homepage(BrowserManager manager) {
         super(manager);
-    }
-
-    public WebElement getLoveText() {
-        return loveText;
     }
 
     public String readMessage() {

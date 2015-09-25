@@ -1,6 +1,7 @@
 package awesomeautomation.tests;
 
 import awesomeautomation.conf.HomepageConfiguration;
+import awesomeautomation.modules.Header;
 import awesomeautomation.modules.Homepage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -22,4 +23,7 @@ public class BaseTest extends AbstractTestNGSpringContextTests {
 
     @Autowired
     Homepage homepage;
+
+    @Autowired
+    Header header;
 }

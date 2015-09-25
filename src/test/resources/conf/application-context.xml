@@ -30,4 +30,9 @@
        <bean id="homepage" class="awesomeautomation.modules.Homepage" init-method="initPage">
               <constructor-arg ref="browserManager"/>
        </bean>
+
+       <!-- Header -->
+       <bean id="header" class="awesomeautomation.modules.Header" init-method="initPage">
+              <constructor-arg ref="browserManager"/>
+       </bean>
 </beans>
