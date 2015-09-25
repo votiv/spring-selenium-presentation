@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+       <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+              <property name="location" value="classpath:conf/application.properties"/>
+       </bean>
+
+       <bean id="baseConfiguration" class="awesomeautomation.conf.EnvironmentConfiguration">
+              <property name="browser" value="${browser.type}"/>
+              <property name="chromeDriverLocation" value="${browser.chromedriver.location}"/>
+              <property name="domain" value="${domain}"/>
+       </bean>
+
+       <bean id="homepageConfiguration" parent="baseConfiguration"
+             class="awesomeautomation.conf.HomepageConfiguration">
+              <property name="homepage" value="${homepage}"/>
+       </bean>
+
+       <!-- Browser manager-->
+       <bean id="browserManager" class="tools.BrowserManager" primary="true"
+             destroy-method="close" factory-method="createInstance">
+              <constructor-arg ref="baseConfiguration"/>
+       </bean>
+
+       <!-- Homepage -->
+       <bean id="homepage" class="awesomeautomation.modules.Homepage" init-method="initPage">
+              <constructor-arg ref="browserManager"/>
+       </bean>
+</beans>
