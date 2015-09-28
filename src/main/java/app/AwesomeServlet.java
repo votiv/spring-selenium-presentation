@@ -34,6 +34,9 @@ public class AwesomeServlet extends HttpServlet {
         out.println("<p>Yes, if you make it look like an electrical fire. When you do things right, people won't be sure you've done anything at all. You guys realize you live in a sewer, right? Oh sure! Blame the wizards! You wouldn't. Ask anyway! You wouldn't. Ask anyway! Bender! Ship! Stop bickering or I'm going to come back there and change your opinions manually!</p>");
         out.println("<h4>A Big Piece of Garbage</h4>");
         out.println("<p>This opera's as lousy as it is brilliant!  Your lyrics lack subtlety. You can't just have your characters announce how they feel. That makes me feel angry! I just told you! You've killed me! Is the Space Pope reptilian!?</p>");
+        out.println("<div class=\"button\" style=\"width: 150px; height: 40px; border-radius: 10px; color: #001f3f; background-color: #7fdbff; box-shadow: 0 5px 5px 0 #0074d9; padding-top: 15px; text-align: center; font-size: 20px; line-height: 22px;\">");
+        out.println("Awesome Button");
+        out.println("</div>");
         out.println("</div>");
         out.println("</div>");
         out.println("<footer>");

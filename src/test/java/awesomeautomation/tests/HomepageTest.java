@@ -3,7 +3,9 @@ package awesomeautomation.tests;
 import awesomeautomation.conf.EnvironmentConfiguration;
 import awesomeautomation.conf.HomepageConfiguration;
 import awesomeautomation.modules.Homepage;
+import awesomeautomation.modules.Title;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -14,6 +16,12 @@ import org.testng.annotations.Test;
  */
 public class HomepageTest extends BaseTest {
 
+    @Autowired
+    Homepage homepage;
+
+    @Autowired
+    Title title;
+
     @BeforeClass
     public void setUp() {
 
@@ -23,6 +31,12 @@ public class HomepageTest extends BaseTest {
     @Test(description = "Testing the shit out of this homepage!")
     public void testHomepage () {
 
-        Assert.assertEquals(homepage.readMessage(), "Spring + Selenium = Love", "The love isn't happening :(");
+        Assert.assertTrue(homepage.isButtonDisplayed(), "The love isn't happening :(");
+    }
+
+    @Test(description = "The title gets it!")
+    public void testTitle() {
+
+        Assert.assertTrue(title.isTitleRed(), "The title isn't red!");
     }
 }

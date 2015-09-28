@@ -31,8 +31,8 @@
               <constructor-arg ref="browserManager"/>
        </bean>
 
-       <!-- Header -->
-       <bean id="header" class="awesomeautomation.modules.Header" init-method="initPage">
+       <!-- Title -->
+       <bean id="title" class="awesomeautomation.modules.Title" init-method="initPage">
               <constructor-arg ref="browserManager"/>
        </bean>
 </beans>

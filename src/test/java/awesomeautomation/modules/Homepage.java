@@ -6,6 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import tools.BasePageObject;
 import tools.BrowserManager;
@@ -15,8 +16,8 @@ import tools.BrowserManager;
  */
 public class Homepage extends BasePageObject {
 
-    @FindBy(css = ".love-text")
-    private WebElement loveText;
+    @FindBy(css = ".button")
+    private WebElement awesomeButton;
 
     public Homepage(WebDriver driver, WebDriverWait wait) {
         super(driver, wait);
@@ -26,7 +27,7 @@ public class Homepage extends BasePageObject {
         super(manager);
     }
 
-    public String readMessage() {
-        return loveText.getText();
+    public boolean isButtonDisplayed() {
+        return awesomeButton.isDisplayed();
     }
 }
