@@ -15,9 +15,9 @@ public class Title extends BasePageObject {
     @FindBy(id = "title")
     private WebElement titleText;
 
-    public Title(WebDriver driver, WebDriverWait wait) {
-        super(driver, wait);
-    }
+//    public Title(WebDriver driver, WebDriverWait wait) {
+//        super(driver, wait);
+//    }
 
     public Title(BrowserManager manager) {
         super(manager);

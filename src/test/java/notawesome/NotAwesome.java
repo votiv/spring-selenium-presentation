@@ -19,7 +19,7 @@ public class NotAwesome {
     private WebDriver driver;
     private WebDriverWait wait;
 
-    public void initDriver () {
+    public void initDriver() {
 
         this.driver = new FirefoxDriver();
 

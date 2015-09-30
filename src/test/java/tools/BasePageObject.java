@@ -1,8 +1,6 @@
 package tools;
 
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.TimeoutException;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -18,9 +16,9 @@ import org.springframework.stereotype.Component;
 public class BasePageObject {
     private static final Logger LOG = LoggerFactory.getLogger(BasePageObject.class);
 
-    public long pageLoadTimeout = 30;
-    public WebDriver driver;
-    public WebDriverWait wait;
+    private WebDriver driver;
+    private WebDriverWait wait;
+    private SearchContext searchContext;
 
     public BasePageObject(WebDriver driver, WebDriverWait wait) {
         this.driver = driver;
@@ -30,6 +28,11 @@ public class BasePageObject {
     @Autowired
     public BasePageObject(BrowserManager manager) {
         this(manager.getDriver(), manager.getWait());
+    }
+
+    public BasePageObject(SearchContext context) {
+
+        if (context.getClass().isAssignableFrom(WebElement.class)) { PageFactory.initElements(getDriver(), context); }
     }
 
     public void initPage() {

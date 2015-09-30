@@ -2,6 +2,7 @@ package awesomeautomation.tests;
 
 import awesomeautomation.conf.EnvironmentConfiguration;
 import awesomeautomation.conf.HomepageConfiguration;
+import awesomeautomation.modules.BodyContainer;
 import awesomeautomation.modules.Homepage;
 import awesomeautomation.modules.Title;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,5 +39,13 @@ public class HomepageTest extends BaseTest {
     public void testTitle() {
 
         Assert.assertTrue(title.isTitleRed(), "The title isn't red!");
+    }
+
+    @Test(description = "Is there fire?")
+    public void isThereFire() {
+
+        BodyContainer bodyContainer = homepage.getBodyContainer();
+
+        Assert.assertTrue(bodyContainer.firstParagraphIsOnFire().isDisplayed(), "The title isn't red!");
     }
 }
