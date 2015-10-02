@@ -35,4 +35,9 @@
        <bean id="title" class="awesomeautomation.modules.Title" init-method="initPage">
               <constructor-arg ref="browserManager"/>
        </bean>
+
+       <!-- Body Container -->
+       <bean id="bodyContainer" class="awesomeautomation.modules.BodyContainer" init-method="initPage">
+              <constructor-arg ref="browserManager"/>
+       </bean>
 </beans>
