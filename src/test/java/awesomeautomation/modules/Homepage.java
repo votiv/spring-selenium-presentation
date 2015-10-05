@@ -18,9 +18,9 @@ public class Homepage extends BasePageObject {
     @FindBy(css = ".body-container")
     private WebElement bodyContainer;
 
-//    public Homepage(WebDriver driver, WebDriverWait wait) {
-//        super(driver, wait);
-//    }
+    public Homepage(WebDriver driver, WebDriverWait wait) {
+        super(driver, wait);
+    }
 
     public Homepage(BrowserManager manager) {
         super(manager);

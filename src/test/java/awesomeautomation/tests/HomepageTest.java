@@ -1,16 +1,15 @@
 package awesomeautomation.tests;
 
-import awesomeautomation.conf.EnvironmentConfiguration;
-import awesomeautomation.conf.HomepageConfiguration;
 import awesomeautomation.modules.BodyContainer;
 import awesomeautomation.modules.Homepage;
 import awesomeautomation.modules.Title;
+import org.openqa.selenium.WebElement;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.testng.Assert;
-import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+
+import java.util.List;
 
 /**
  * Created by viskyo on 24/09/2015.
@@ -22,6 +21,9 @@ public class HomepageTest extends BaseTest {
 
     @Autowired
     Title title;
+
+    @Autowired
+    BodyContainer bodyContainer;
 
     @BeforeClass
     public void setUp() {
@@ -44,8 +46,13 @@ public class HomepageTest extends BaseTest {
     @Test(description = "Is there fire?")
     public void isThereFire() {
 
-        BodyContainer bodyContainer = homepage.getBodyContainer();
-
         Assert.assertTrue(bodyContainer.firstParagraphIsOnFire().isDisplayed(), "The title isn't red!");
+    }
+
+    @Test(description = "SearchContext test")
+    public void testSC() {
+
+        List<WebElement> elementList = bodyContainer.findElementsUsingText(bodyContainer.getFirstParagraph(), "fire");
+        Assert.assertEquals(elementList.get(0).getText(), "fire", "Is not on fire!");
     }
 }
