@@ -1,7 +1,7 @@
 package awesomeautomation.tests;
 
 import awesomeautomation.conf.HomepageConfiguration;
-import awesomeautomation.modules.List;
+import awesomeautomation.modules.AwesomeLists;
 import awesomeautomation.modules.ListContainer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.testng.Assert;
@@ -19,7 +19,7 @@ public class ListTests extends BaseTest {
     @Autowired
     ListContainer listContainer;
 
-    List list;
+    AwesomeLists list;
 
     @BeforeClass
     public void setUp() {

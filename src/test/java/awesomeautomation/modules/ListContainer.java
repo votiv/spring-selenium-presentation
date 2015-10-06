@@ -27,11 +27,11 @@ public class ListContainer extends BasePageObject {
         super(manager);
     }
 
-    public awesomeautomation.modules.List getContentOfSpecificList(String areaTitle) {
+    public AwesomeLists getContentOfSpecificList(String listTitle) {
 
-        //Instantiate a locator that finds the content section of a zone base on the zones title.
-        By locator = By.cssSelector("." + areaTitle);
+        //Instantiate a locator that finds the content section of a list based on the lists class.
+        By locator = By.cssSelector("." + listTitle);
 
-        return new awesomeautomation.modules.List(getDriver(), getWait(), listContainer.findElement(locator));
+        return new AwesomeLists(getDriver(), getWait(), listContainer.findElement(locator));
     }
 }

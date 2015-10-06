@@ -13,19 +13,19 @@ import tools.BrowserManager;
 /**
  * Created by viskyo on 06/10/2015.
  */
-public class List extends BasePageObject {
+public class AwesomeLists extends BasePageObject {
 
     private java.util.List<WebElement> li = getSearchContext().findElements(By.cssSelector("ul li"));
 
-    public List(WebDriver driver, WebDriverWait wait) {
+    public AwesomeLists(WebDriver driver, WebDriverWait wait) {
         super(driver, wait);
     }
 
-    public List(BrowserManager manager) {
+    public AwesomeLists(BrowserManager manager) {
         super(manager);
     }
 
-    public List(WebDriver driver, WebDriverWait wait, SearchContext context) {
+    public AwesomeLists(WebDriver driver, WebDriverWait wait, SearchContext context) {
         super(driver, wait, context);
     }
 
