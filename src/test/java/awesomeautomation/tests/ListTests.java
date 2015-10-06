@@ -30,6 +30,8 @@ public class ListTests extends BaseTest {
     @Test(description = "List1 test.")
     public void testList1() {
 
+        list = listContainer.getListItem("2");
+        Assert.assertEquals(list.getText(), "2", "Wrong!");
         list = listContainer.getContentOfSpecificList("list1");
         Assert.assertEquals(list.getNthListItem(2), "2", "Wrong!");
     }
@@ -37,6 +39,8 @@ public class ListTests extends BaseTest {
     @Test(description = "List2 test.")
     public void testList2() {
 
+        list = listContainer.getListItem("one");
+        Assert.assertEquals(list.getText(), "one", "Wrong!");
         list = listContainer.getContentOfSpecificList("list2");
         Assert.assertEquals(list.getNthListItem(2), "two", "Wrong!");
     }

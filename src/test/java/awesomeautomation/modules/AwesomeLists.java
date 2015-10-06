@@ -10,12 +10,15 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import tools.BasePageObject;
 import tools.BrowserManager;
 
+import java.util.List;
+
 /**
  * Created by viskyo on 06/10/2015.
  */
 public class AwesomeLists extends BasePageObject {
 
-    private java.util.List<WebElement> li = getSearchContext().findElements(By.cssSelector("ul li"));
+    private List<WebElement> specificList = getSearchContext().findElements(By.cssSelector("ul li"));
+    private SearchContext li = getSearchContext();
 
     public AwesomeLists(WebDriver driver, WebDriverWait wait) {
         super(driver, wait);
@@ -31,6 +34,11 @@ public class AwesomeLists extends BasePageObject {
 
     public String getNthListItem(int nth) {
 
-        return li.get(nth - 1).getText();
+        return specificList.get(nth - 1).getText();
+    }
+
+    public String getText() {
+
+        return ((WebElement) li).getText();
     }
 }

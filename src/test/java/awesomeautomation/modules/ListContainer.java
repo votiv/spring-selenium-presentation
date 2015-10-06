@@ -34,4 +34,11 @@ public class ListContainer extends BasePageObject {
 
         return new AwesomeLists(getDriver(), getWait(), listContainer.findElement(locator));
     }
+
+    public AwesomeLists getListItem(String itemText) {
+
+        By locator = By.xpath("//*[.='" + itemText + "']");
+
+        return new AwesomeLists(getDriver(), getWait(), listContainer.findElement(locator));
+    }
 }
