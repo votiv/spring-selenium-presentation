@@ -1,21 +1,24 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="awesomeTesting">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title></title>
-    <link rel="stylesheet" href="resources/css/wesome-style.css"/>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.3/angular.min.js"></script>
+    <link rel="stylesheet" href="resources/css/reset.css"/>
+    <link rel="stylesheet" href="resources/css/awesome-style.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0/angular.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
-    <script type="text/javascript" src="tiles/awesomeTestingApp.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.1/angular-route.js"></script>
+    <script type="text/javascript" src="awesomeTestingApp.js"></script>
+    <script type="text/javascript" src="tiles/homeController.js"></script>
 </head>
-<body>
+<body ng-app="awesomeTesting">
     <header>
         <div class="header-container">
         <h1 id="title">Spring + Selenium = Love</h1>
         </div>
     </header>
 
-    <div ui-view></div>
+    <div ng-view class="body"></div>
 
     <footer>
         <span>&copy; We did it!</span>
