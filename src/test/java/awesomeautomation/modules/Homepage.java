@@ -29,9 +29,4 @@ public class Homepage extends BasePageObject {
     public boolean isButtonDisplayed() {
         return awesomeButton.isDisplayed();
     }
-
-    public BodyContainer getBodyContainer() {
-
-        return new BodyContainer(bodyContainer);
-    }
 }

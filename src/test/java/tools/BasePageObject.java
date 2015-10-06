@@ -30,9 +30,11 @@ public class BasePageObject {
         this(manager.getDriver(), manager.getWait());
     }
 
-    public BasePageObject(SearchContext context) {
-
-        if (context.getClass().isAssignableFrom(WebElement.class)) { PageFactory.initElements(getDriver(), context); }
+    public BasePageObject(WebDriver driver, WebDriverWait wait, SearchContext context) {
+        this.driver = driver;
+        this.wait = wait;
+        searchContext = context;
+        PageFactory.initElements(driver, searchContext.getClass());
     }
 
     public void initPage() {
@@ -53,6 +55,10 @@ public class BasePageObject {
 
     public void setWait(WebDriverWait wait) {
         this.wait = wait;
+    }
+
+    public SearchContext getSearchContext() {
+        return searchContext;
     }
 
     /**

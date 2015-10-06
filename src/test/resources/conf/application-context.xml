@@ -37,7 +37,7 @@
        </bean>
 
        <!-- Body Container -->
-       <bean id="bodyContainer" class="awesomeautomation.modules.BodyContainer" init-method="initPage">
+       <bean id="listContainer" class="awesomeautomation.modules.ListContainer" init-method="initPage">
               <constructor-arg ref="browserManager"/>
        </bean>
 </beans>
