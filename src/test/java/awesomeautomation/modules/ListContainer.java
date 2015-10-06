@@ -37,6 +37,7 @@ public class ListContainer extends BasePageObject {
 
     public AwesomeLists getListItem(String itemText) {
 
+        // Instantiate a locator that finds a list item based on its text.
         By locator = By.xpath("//*[.='" + itemText + "']");
 
         return new AwesomeLists(getDriver(), getWait(), listContainer.findElement(locator));
