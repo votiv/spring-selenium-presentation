@@ -16,9 +16,17 @@ import java.util.List;
  */
 public class ListContainer extends BasePageObject {
 
+    /**
+     * WebElements
+     */
     @FindBy(css = ".list-container")
     private WebElement listContainer;
 
+    /**
+     * Constructors
+     * @param driver
+     * @param wait
+     */
     public ListContainer(WebDriver driver, WebDriverWait wait) {
         super(driver, wait);
     }

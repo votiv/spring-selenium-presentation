@@ -12,12 +12,20 @@ import tools.BrowserManager;
  */
 public class Homepage extends BasePageObject {
 
+    /**
+     * WebElements
+     */
     @FindBy(css = ".button")
     private WebElement awesomeButton;
 
     @FindBy(css = ".body-container")
     private WebElement bodyContainer;
 
+    /**
+     * Constructors
+     * @param driver
+     * @param wait
+     */
     public Homepage(WebDriver driver, WebDriverWait wait) {
         super(driver, wait);
     }
@@ -26,7 +34,14 @@ public class Homepage extends BasePageObject {
         super(manager);
     }
 
+    /**
+     * Services
+     */
     public boolean isButtonDisplayed() {
         return awesomeButton.isDisplayed();
+    }
+
+    public Homepage lookAtHomePage() {
+        return this;
     }
 }

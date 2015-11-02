@@ -6,4 +6,5 @@ package awesomeautomation.conf;
 public class Constants {
 
     public static final String FIREFOX = "firefox";
+    public static final String RED = "rgba(255, 0, 0, 1)";
 }

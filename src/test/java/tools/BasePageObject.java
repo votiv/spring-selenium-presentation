@@ -20,6 +20,11 @@ public class BasePageObject {
     private WebDriverWait wait;
     private SearchContext searchContext;
 
+    /**
+     * Constructors
+     * @param driver
+     * @param wait
+     */
     public BasePageObject(WebDriver driver, WebDriverWait wait) {
         this.driver = driver;
         this.wait = wait;
@@ -37,10 +42,16 @@ public class BasePageObject {
         PageFactory.initElements(driver, searchContext.getClass());
     }
 
+    /**
+     * This method is used by Spring to instantiate the object it receives
+     */
     public void initPage() {
         PageFactory.initElements(getDriver(), this);
     }
 
+    /**
+     * Getters, setters
+     */
     public WebDriver getDriver() {
         return driver;
     }

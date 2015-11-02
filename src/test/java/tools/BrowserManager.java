@@ -95,7 +95,6 @@ public class BrowserManager {
 
     /**
      * stops the server
-     *
      * @throws Exception
      */
     public void close() {
